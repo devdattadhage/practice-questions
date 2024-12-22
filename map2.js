@@ -1,18 +1,68 @@
 // capitalize first letters of  21
 // ["hello world", "goodbye moon"] => ["Hello World", "Goodbye Moon"]
-const capitalizedFirstLettersOf = function (strings) { };
+const firstLetterCapital = function ([firstLetter, ...rest]) {
+  return [firstLetter.toUpperCase(), ...rest].join('');
+}
 
-// find word lengths in ["apple pie", "banana split"] => [[5, 3], [6, 5]]
-const wordLengthsOf = function (strings) { };
+const getFirstLettersCapital = function (text) {
+  return text.split(' ').map(firstLetterCapital).join(' ');
+}
 
-// flatten nested arrays of [[1, [2, 3]], [4, [5, 6]]] => [[1, 2, 3], [4, 5, 6]]
-const flattenedArraysOf = function (arrays) { };
+const capitalizedFirstLettersOf = function (strings) {
+  return strings.map(getFirstLettersCapital);
+};
 
-// sort letters in ["cat", "bat", "rat"] alphabetically => ["act", "abt", "art"]
-const sortedLettersOf = function (strings) { };
+console.log(capitalizedFirstLettersOf(["hello world", "goodbye moon"]));
 
-// wrap strings in brackets ["apple", "banana"] => ["[apple]", "[banana]"]
-const wrappedStringsOf = function (strings) { };
+// find word lengths in ["apple pie", "banana split"] => [[5, 3], [6, 5]] 22
+const getLength = function (element) {
+  return element.length;
+}
+
+const getWordsLength = function (words) {
+  return words.split(' ').map(getLength);
+}
+
+const wordLengthsOf = function (strings) {
+  return strings.map(getWordsLength);
+};
+
+console.log(wordLengthsOf(["apple pie", "banana split"]));
+
+// flatten nested arrays of  23
+// [[1, [2, 3]], [4, [5, 6]]] => [[1, 2, 3], [4, 5, 6]]
+const flattenNestedArrays = function (array) {
+  return array.flat(Infinity);
+}
+
+const flattenedArraysOf = function (arrays) {
+  return arrays.map(flattenNestedArrays);
+};
+
+console.log(flattenedArraysOf([[1, [2, 3]], [4, [5, 6]]]));
+
+// sort letters in 24
+// ["cat", "bat", "rat"] alphabetically => ["act", "abt", "art"]
+const sorting = function (element) {
+  return [...element].sort().join('');
+}
+
+const sortedLettersOf = function (strings) {
+  return strings.map(sorting);
+};
+
+console.log(sortedLettersOf(["cat", "bat", "rat"]));
+
+// wrap strings in brackets ["apple", "banana"] => ["[apple]", "[banana]"] 25
+const wrap = function (element) {
+  return '[' + element + ']';
+}
+
+const wrappedStringsOf = function (strings) {
+  return strings.map(wrap);
+};
+
+console.log(wrappedStringsOf(["apple", "banana"]));
 
 // extract names from [{ name: "Alice" }, { name: "Bob" }] => ["Alice", "Bob"]
 const extractNames = function (objects) { };

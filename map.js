@@ -89,12 +89,12 @@ const doubleLettersOf = function (strings) {
 console.log(doubleLettersOf(["cat", "dog", "bat"]));
 
 // boolean negation of [true, false, true] => [false, true, false] 8
-const negateBoolean = function (bool) {
+const invertBool = function (bool) {
   return !bool;
 }
 
 const negatedBooleansOf = function (booleans) {
-  return booleans.map(negateBoolean);
+  return booleans.map(invertBool);
 };
 
 console.log(negatedBooleansOf([true, false, true]));
