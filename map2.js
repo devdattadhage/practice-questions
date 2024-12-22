@@ -15,12 +15,10 @@ const capitalizedFirstLettersOf = function (strings) {
 console.log(capitalizedFirstLettersOf(["hello world", "goodbye moon"]));
 
 // find word lengths in ["apple pie", "banana split"] => [[5, 3], [6, 5]] 22
-const getLength = function (element) {
-  return element.length;
-}
-
 const getWordsLength = function (words) {
-  return words.split(' ').map(getLength);
+  return words.split(' ').map(function (word) {
+    return word.length;
+  });
 }
 
 const wordLengthsOf = function (strings) {
@@ -31,12 +29,12 @@ console.log(wordLengthsOf(["apple pie", "banana split"]));
 
 // flatten nested arrays of  23
 // [[1, [2, 3]], [4, [5, 6]]] => [[1, 2, 3], [4, 5, 6]]
-const flattenNestedArrays = function (array) {
+const flatArrays = function (array) {
   return array.flat(Infinity);
 }
 
 const flattenedArraysOf = function (arrays) {
-  return arrays.map(flattenNestedArrays);
+  return arrays.map(flatArrays);
 };
 
 console.log(flattenedArraysOf([[1, [2, 3]], [4, [5, 6]]]));
@@ -65,19 +63,49 @@ const wrappedStringsOf = function (strings) {
 console.log(wrappedStringsOf(["apple", "banana"]));
 
 // extract names from [{ name: "Alice" }, { name: "Bob" }] => ["Alice", "Bob"]
-const extractNames = function (objects) { };
+const extractNames = function (objects) {
+  return objects.map(function (person) {
+    return person.name;
+  });
+};
 
-// extract ages from [{ age: 25 }, { age: 30 }] => [25, 30]
-const extractAges = function (objects) { };
+console.log(extractNames([{ name: "Alice" }, { name: "Bob" }]));
 
-// extract the first letters of names from [{ name: "Alice" }, { name: "Bob" }] => ["A", "B"]
-const firstLettersOfNames = function (objects) { };
+// extract ages from [{ age: 25 }, { age: 30 }] => [25, 30] 27
+const extractAges = function (objects) {
+  return objects.map(function (person) {
+    return person.age;
+  })
+};
 
-// calculate areas from [{ width: 2, height: 3 }, { width: 4, height: 5 }] => [6, 20]
-const calculateAreas = function (rectangles) { };
+console.log(extractAges([{ age: 25 }, { age: 30 }]));
 
-// extract boolean flags from [{ active: true }, { active: false }] => [true, false]
-const extractFlags = function (objects) { };
+// extract the first letters of names from [{ name: "Alice" }, { name: "Bob" }] => ["A", "B"] 28
+const firstLettersOfNames = function (objects) {
+  return objects.map(function (person) {
+    return person.name.at(0);
+  })
+};
+
+console.log(firstLettersOfNames([{ name: "Alice" }, { name: "Bob" }]));
+
+// calculate areas from [{ width: 2, height: 3 }, { width: 4, height: 5 }] => [6, 20] 29
+const calculateAreas = function (rectangles) {
+  return rectangles.map(function (rectangle) {
+    return rectangle.width * rectangle.height;
+  });
+};
+
+console.log(calculateAreas([{ width: 2, height: 3 }, { width: 4, height: 5 }]));
+
+// extract boolean flags from [{ active: true }, { active: false }] => [true, false] 30
+const extractFlags = function (objects) {
+  return objects.map(function ({ active }) {
+    return active;
+  });
+};
+
+console.log(extractFlags([{ active: true }, { active: false }]));
 
 // concatenate first and last names from [{ firstName: "Alice", lastName: "Smith" }, { firstName: "Bob", lastName: "Brown" }] => ["Alice Smith", "Bob Brown"]
 const fullNames = function (objects) { };
