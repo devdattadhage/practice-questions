@@ -1,7 +1,13 @@
 // normalize scores so they fall between 0 and 1 based on the max score from [{ name: "Alice", score: 80 }, { name: "Bob", score: 100 }] => [0.8, 1] 41
-const normalizeScores = function (objects) { };
+const normalizeScores = function (objects) {
+  return objects.map(function ({ _, score }) {
+    return score / 100;
+  });
+};
 
-// calculate percentage contribution of each number in [10, 20, 30] (relative to the total sum) => [16.67, 33.33, 50]
+console.log(normalizeScores([{ name: "Alice", score: 80 }, { name: "Bob", score: 100 }]));
+
+// calculate percentage contribution of each number in [10, 20, 30] (relative to the total sum) => [16.67, 33.33, 50] 42
 const percentageContributions = function (numbers) { };
 
 // subtract the smallest number from each number in [3, 8, 1] => [2, 7, 0]
