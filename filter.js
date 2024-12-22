@@ -1,7 +1,16 @@
-// even numbers [1, 2, 3, 4, 5] => [2, 4]
-const filterEvenNumbers = function (numbers) { };
+// even numbers [1, 2, 3, 4, 5] => [2, 4]  1
+const isEven = function (number) {
+  return number % 2 === 0
+}
 
-// words with more than 5 letters ["apple", "banana", "kiwi", "grape"] => ["banana"]
+const filterEvenNumbers = function (numbers) {
+  return numbers.filter(isEven);
+};
+
+console.log(filterEvenNumbers([1, 2, 3, 4, 5]));
+
+// words with more than 5 letters  2
+// ["apple", "banana", "kiwi", "grape"] => ["banana"]
 const filterLongWords = function (words) { };
 
 // people older than 30 [{name: "Alice", age: 25}, {name: "Bob", age: 35}] => [{name: "Bob", age: 35}]
@@ -215,13 +224,15 @@ const filterUsersByPostComments = function (users, minComments) { };
 const filterUsersByPostCategory = function (users, category) { };
 
 // Filter users who have a certain number of followers and have posted in the last 30 days [{user: {name: "Tom", followers: 1000, lastPostDate: "2024-11-10"}}] => [{user: {name: "Tom", followers: 1000, lastPostDate: "2024-11-10"}}]
-const filterActiveUsers = function (users, minFollowers, daysAgo) { };
+
+// const filterActiveUsers = function (users, minFollowers, daysAgo) { };
 
 // Filter posts that have at least one hashtag from a list of trending hashtags [{post: {title: "Post 1", hashtags: ["#food", "#vegan"]}}] => [{post: {title: "Post 1", hashtags: ["#food", "#vegan"]}}]
 const filterPostsByHashtags = function (posts, trendingHashtags) { };
 
 // Filter users who have shared at least one post that received a specific number of likes [{user: {name: "Lucy", posts: [{title: "Post 1", likes: 500}, {title: "Post 2", likes: 100}]}}] => [{user: {name: "Lucy", posts: [{title: "Post 1", likes: 500}, {title: "Post 2", likes: 100}]}}]
-const filterUsersByPostLikes = function (users, minLikes) { };
+
+// const filterUsersByPostLikes = function (users, minLikes) { };
 
 // Filter posts that have a certain number of comments and are from a specific location [{post: {title: "Post 1", comments: 150, location: "Paris"}}] => [{post: {title: "Post 1", comments: 150, location: "Paris"}}]
 const filterPostsByCommentsAndLocation = function (posts, minComments, location) { };
