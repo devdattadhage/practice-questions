@@ -152,9 +152,7 @@ const joinWithComma = function (words) {
 console.log(joinWithComma(["apple", "banana", "cherry"]));
 
 // reverseWords(["hello", "world"]) => "world hello"
-const reverseWords = function (words) {
-  return words;
-}
+const reverseWords = function (words) {}
 
 // joinWordsWithSpace(["apple", "banana", "cherry"]) => "apple banana cherry"
 const joinWordsWithSpace = function (words) { }
