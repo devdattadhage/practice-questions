@@ -198,7 +198,7 @@ console.log(uniqueNumbers([1, 2, 2, 3, 4, 4, 5]));
 
 // groupByLength(["apple", "banana", "cherry", "date"]) => { 5: ["apple", "cherry"], 6: ["banana"], 4: ["date"] }
 const makeGroups = (object, text) => {
-  if (!(text.length in object)) {
+  if (!text.length in object) {
     object[text.length] = [];
   }
 
